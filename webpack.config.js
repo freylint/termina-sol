@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-var web_client_prefix = './packages/client-web'
+var WEB_CLIENT_PREFIX = './packages/client-web'
 var APP_NAME = 'Termina-Sol'
 
 
@@ -36,7 +36,7 @@ module.exports = {
         exclude: [/elm-stuff/, /node_modules/],
         loader:  'elm-webpack-loader',
         options: {
-          cwd: web_client_prefix
+          cwd: WEB_CLIENT_PREFIX
         }
       },
     ]
