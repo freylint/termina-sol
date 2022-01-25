@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
-var WEB_CLIENT_PREFIX = './packages/client-web'
+var WEB_CLIENT_PREFIX = path.resolve(__dirname, './packages/client-web')
 var APP_NAME = 'Termina-Sol'
 
 
