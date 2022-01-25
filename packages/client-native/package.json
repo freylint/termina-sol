@@ -1,0 +1,15 @@
+{
+  "name": "termina-sol-native",
+  "license": "GPL-v3.0",
+  "scripts": {
+    "tauri": "tauri",
+    "build": "tauri build",
+    "build-in-tree": ""
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-beta.10"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.0-beta.8"
+  }
+}

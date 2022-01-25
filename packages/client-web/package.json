@@ -1,0 +1,17 @@
+{
+  "name": "termina-sol-web",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "elm": "^0.19.1-5"
+  },
+  "cfg": {
+    "build_dir": "./build",
+    "in_tree_out_dir": "../../build"
+  },
+  "scripts": {
+    "build": "elm make src/Main.elm --output $npm_package_cfg_build_dir/index.js",
+    "build-in-tree": "elm make src/Main.elm --output $npm_package_cfg_in_tree_out_dir/index.js"
+  }
+}

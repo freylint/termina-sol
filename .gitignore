@@ -1,0 +1,21 @@
+# IDE configurations
+**/.vs/
+**/.vscode/
+**/.idea/
+**/.vim/
+
+# Node artifacts
+**/node_modules
+yarn-error.log
+
+# Elm artifacts
+**/elm-stuff
+
+# Rust artifacts
+**/target/
+**/WixTools
+
+# Build artifacts
+**/dist/
+**/build-cache/
+**/build/
