@@ -8,24 +8,19 @@ var APP_NAME = 'Termina-Sol'
 
 module.exports = {
   // Compiler configuration
-  devtool: 'source-map',
   optimization: {
     chunkIds: 'named',
   },
-  entry: './build/index.js',
+  entry: WEB_CLIENT_PREFIX + '/src/Main.elm',
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: "./assets",
     filename: 'main.js',
   },
 
   // Module processor configuration
   module: {
     rules: [
-      {
-        test:    /\.html$/,
-        exclude: /node_modules/,
-        loader: 'html-loader'
-      },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'assets/img',
@@ -36,7 +31,7 @@ module.exports = {
         exclude: [/elm-stuff/, /node_modules/],
         loader:  'elm-webpack-loader',
         options: {
-          cwd: WEB_CLIENT_PREFIX
+          cwd: WEB_CLIENT_PREFIX,
         }
       },
     ]
@@ -46,15 +41,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: APP_NAME,
-      'files': {
-        'chunks': {
-          'head': {},
-          'body': {
-            'entry': 'build/index.js',
-            'css': []
-          }
-        }
-      }
+      inject: "body"
     }),
     new FaviconsWebpackPlugin({
       logo: './assets/icon.png',

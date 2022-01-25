@@ -14,7 +14,7 @@
     "webpack": "webpack",
     "install:web": "cd $npm_package_cfg_webdir && yarn install",
     "install:native": "cd $npm_package_cfg_nativedir && yarn install",
-    "build:web": "cd $npm_package_cfg_webdir && yarn build-in-tree",
+    "build:web": "yarn run webpack",
     "build:native": "cd $npm_package_cfg_nativedir && yarn build",
     "open": "cd $npm_package_cfg_nativedir/src-tauri && cargo r",
     "serve": "webpack serve --mode=development",
@@ -27,12 +27,12 @@
     "webpack-cli": "^4.9.1"
   },
   "devDependencies": {
+    "elm": "^0.19.1-5",
+    "elm-webpack-loader": "^8.0.0",
     "@types/express": "^4.17.13",
     "favicons": "^6.2.2",
     "favicons-webpack-plugin": "^5.0.2",
     "file-loader": "^6.2.0",
-    "html-loader": "^3.1.0",
-    "html-webpack-plugin": "^5.5.0",
     "webpack-dev-server": "^4.7.3"
   }
 }

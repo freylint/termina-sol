@@ -3,8 +3,7 @@
   "license": "GPL-v3.0",
   "scripts": {
     "tauri": "tauri",
-    "build": "tauri build",
-    "build-in-tree": ""
+    "build": "tauri build"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^1.0.0-beta.10"
