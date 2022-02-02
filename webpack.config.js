@@ -14,7 +14,6 @@ module.exports = {
   entry: WEB_CLIENT_PREFIX + '/src/Main.elm',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: "./assets",
     filename: 'main.js',
   },
 
@@ -45,6 +44,8 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin({
       logo: './assets/icon.png',
+      mode: 'webapp',
+      devMode: 'webapp',
       favicons: {
         appName: APP_NAME
       }
