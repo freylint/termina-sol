@@ -7,6 +7,7 @@
 # Node artifacts
 **/node_modules
 yarn-error.log
+package-lock.json
 
 # Elm artifacts
 **/elm-stuff
