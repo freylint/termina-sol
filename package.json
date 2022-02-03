@@ -5,6 +5,7 @@
   "author": "Termina Sunshine <katvance64@gmail.com>",
   "license": "GPL-3.0-or-later",
   "private": false,
+  "type": "module",
   "cfg": {
     "dist_dir": "./dist/",
     "webdir": "./packages/client-web/",
