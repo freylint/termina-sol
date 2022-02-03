@@ -4,14 +4,37 @@
 <head>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://code.cdn.mozilla.net/fonts/fira.css">
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
 
-  <nav id="nav"></nav>
+  <!-- Navbar -->
+  <nav id="nav" data-role="navbar">
+    <!-- Navigation lista -->
+    <ul>
+      <li>
+        <button class="logo-button">
+          <img class="logo" src="assets/favicon.png" alt="Logo">
+          <h1 class="title">Termina-Sol</h1>
+        </button>
+      </li>
+      <li><button class="nav-button">Demos</button></li>
+      <li><button class="nav-button">Blog</button></li>
+    </ul>
 
+  </nav>
+
+  <!-- Active page content-->
   <main id="main"></main>
+
+  <footer>
+    <p>
+      ©Termina-Sol: Katherine Vance.
+      Licensed under the GPL-3.0-or-later license.
+    </p>
+  </footer>
 
 </body>
 

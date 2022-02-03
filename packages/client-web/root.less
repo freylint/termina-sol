@@ -1,17 +1,116 @@
 // Root style file for site.
 
-@bgcolor: rgb(24, 9, 27);
+@black0 : rgb(24, 9, 27);
+@black1 : rgb(34, 19, 37);
+@black2 : rgb(44, 29, 47);
 
+@white0: rgb(255, 255, 255);
+
+@navbar-height: 10vh;
+
+html {
+  font-family: 'Fira Sans';
+  color      : @white0;
+}
 
 body {
-  min-height      : 100vh;
-  background-color: @bgcolor;
+  // Make content display below navbar
+  padding-top: 11vh;
+
+  // Aesthetics
+  background-color: @black0;
 }
+
+.bar {
+  // Styling
+  background-color: @black1;
+  // Display as horizontal bar
+  display         : flex;
+  margin          : 0 auto;
+  width           : 100%;
+  // Remove padding
+  top             : 0;
+  left            : 0;
+  right           : 0;
+}
+
+footer {
+  .bar;
+}
+
+
 
 nav {
-  color: white;
+  .bar;
+  // Dimensions
+  height: @navbar-height;
+
+  // Render on top in fixed position
+  position: fixed;
+  z-index : 100;
+
+  .logo {
+    display   : flex;
+    overflow  : hidden;
+    object-fit: contain;
+
+    margin: 0 10px;
+
+    max-width : 100%;
+    max-height: 24pt;
+
+  }
+
+  .title {
+    font-size  : large;
+    color      : @white0;
+    // Stop text from wrapping
+    white-space: nowrap;
+  }
+
+  // Horizontal list items
+  ul {
+    // Remove dots
+    list-style: none;
+
+
+    display: flex;
+    width  : 100%;
+    padding: 0 0;
+    margin : 0 0;
+
+  }
+
+  li {
+    display: flex;
+    width  : 100%;
+    height : @navbar-height;
+  }
+
+  button {
+    display   : flex;
+    border    : none;
+    background: none;
+    color     : @white0;
+
+    width          : 100%;
+    height         : @navbar-height;
+    align-items    : center;
+    justify-content: center;
+  }
+
+  button:hover {
+    background-color: @black2;
+  }
+
+  .logo-button {
+    font-size   : larger;
+    justify-self: flex-start;
+  }
+
+  .nav-button {
+    font-size: large;
+  }
 }
 
-main {
-  color: white;
-}
+main {}
