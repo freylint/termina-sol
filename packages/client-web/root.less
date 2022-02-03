@@ -3,10 +3,14 @@
 @black0 : rgb(24, 9, 27);
 @black1 : rgb(34, 19, 37);
 @black2 : rgb(44, 29, 47);
+@black3 : rgb(54, 39, 57);
+@black4 : rgb(64, 49, 67);
 
 @white0: rgb(255, 255, 255);
 
-@navbar-height: 10vh;
+@navbar-height     : 6vh;
+@footer-height     : 4vh;
+@min-content-height: 100vh - @footer-height - @navbar-height;
 
 html {
   font-family: 'Fira Sans';
@@ -14,19 +18,18 @@ html {
 }
 
 body {
-  // Make content display below navbar
-  padding-top: 11vh;
-
+  margin          : 0 0;
   // Aesthetics
   background-color: @black0;
 }
+
 
 .bar {
   // Styling
   background-color: @black1;
   // Display as horizontal bar
   display         : flex;
-  margin          : 0 auto;
+  margin          : 0 0;
   width           : 100%;
   // Remove padding
   top             : 0;
@@ -34,15 +37,31 @@ body {
   right           : 0;
 }
 
-footer {
-  .bar;
+.ui-butt {
+  width          : 100%;
+  height         : @navbar-height;
+  align-items    : center;
+  justify-content: center;
+
+  display   : flex;
+  border    : none;
+  background: none;
+  color     : @white0;
 }
 
+footer {
+  .bar;
 
+  height: @footer-height;
+
+  p {
+    margin: 0 0;
+  }
+
+}
 
 nav {
   .bar;
-  // Dimensions
   height: @navbar-height;
 
   // Render on top in fixed position
@@ -70,15 +89,10 @@ nav {
 
   // Horizontal list items
   ul {
-    // Remove dots
-    list-style: none;
-
-
     display: flex;
     width  : 100%;
     padding: 0 0;
     margin : 0 0;
-
   }
 
   li {
@@ -88,20 +102,21 @@ nav {
   }
 
   button {
-    display   : flex;
-    border    : none;
-    background: none;
-    color     : @white0;
-
-    width          : 100%;
-    height         : @navbar-height;
-    align-items    : center;
-    justify-content: center;
+    .ui-butt;
   }
 
   button:hover {
     background-color: @black2;
   }
+
+  button:focus {
+    background-color: @black3;
+  }
+
+  button:active {
+    background-color: @black4;
+  }
+
 
   .logo-button {
     font-size   : larger;
@@ -113,4 +128,8 @@ nav {
   }
 }
 
-main {}
+main {
+  padding-top: @navbar-height;
+
+  min-height: @min-content-height;
+}
