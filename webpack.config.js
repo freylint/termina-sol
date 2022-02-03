@@ -10,21 +10,16 @@ const WEB_CLIENT_PREFIX = path.resolve(__dirname, './packages/client-web')
 const APP_NAME = 'Termina-Sol'
 
 const base = {
-    // Compiler configuration
     optimization: {
         chunkIds: 'named',
     },
     devtool: isDevelopment && "cheap-module-source-map",
-
-    // Output configuration
     entry: WEB_CLIENT_PREFIX + '/src/index.ts',
     output: {
         publicPath: '',
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
     },
-
-    // Module processor configuration
     module: {
         rules: [
             {
@@ -62,8 +57,6 @@ const base = {
             },
         ]
     },
-
-    // Plugin configuration
     plugins: [
         new HtmlWebpackPlugin({
             title: APP_NAME,
@@ -77,8 +70,6 @@ const base = {
             }
         })
     ],
-
-    // Dev serve configuration
     devServer: {
         allowedHosts: 'auto',
         hot: true
