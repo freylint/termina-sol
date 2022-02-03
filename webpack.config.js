@@ -9,7 +9,7 @@ const isDevelopment = !isProduction;
 const WEB_CLIENT_PREFIX = path.resolve(__dirname, './packages/client-web')
 const APP_NAME = 'Termina-Sol'
 
-const base = {
+export const base = {
     optimization: {
         chunkIds: 'named',
     },
@@ -74,4 +74,4 @@ const base = {
         allowedHosts: 'auto',
         hot: true
     },
-}
+};
