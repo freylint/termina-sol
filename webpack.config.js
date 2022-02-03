@@ -28,23 +28,35 @@ module.exports = function (_env, argv) {
 
         // Module processor configuration
         module: {
-            rules: [{
-                test: /\.less$/i,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "less-loader",
-                ],
-            },
-            {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'assets/img',
-                loader: 'url-loader',
-                options: {
-                    limit: 8192,
-                    name: "static/media/[name].[hash:8].[ext]"
-                }
-            },
+            rules: [
+                {
+                    test: /\.md$/,
+                    use: [
+                        {
+                            loader: "html-loader",
+                        },
+                        {
+                            loader: "remark-loader",
+                        }
+                    ],
+                },
+                {
+                    test: /\.less$/i,
+                    use: [
+                        "style-loader",
+                        "css-loader",
+                        "less-loader",
+                    ],
+                },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'assets/img',
+                    loader: 'url-loader',
+                    options: {
+                        limit: 8192,
+                        name: "static/media/[name].[hash:8].[ext]"
+                    }
+                },
             ]
         },
 
