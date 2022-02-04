@@ -1,15 +1,17 @@
 import path from "path";
+
+import AssetConfigWebpackPlugin from "asset-config-webpack-plugin";
 import FaviconsWebpackPlugin from "favicons-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import RemarkHTML from "remark-html";
 
-const __dirname = path.resolve();
+const dirname = path.resolve();
 const isProduction = process.argv[process.argv.indexOf('--mode') + 1] === 'production';
 const isDevelopment = !isProduction;
-const WEB_CLIENT_PREFIX = path.resolve(__dirname, './packages/client-web')
+const WEB_CLIENT_PREFIX = path.resolve(dirname, './packages/client-web')
 const APP_NAME = 'Termina-Sol'
 
-export const base = {
+const config = {
     optimization: {
         chunkIds: 'named',
     },
@@ -17,7 +19,7 @@ export const base = {
     entry: WEB_CLIENT_PREFIX + '/src/index.ts',
     output: {
         publicPath: '',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(dirname, 'dist'),
         filename: 'bundle.js',
     },
     module: {
@@ -58,6 +60,7 @@ export const base = {
         ]
     },
     plugins: [
+        new AssetConfigWebpackPlugin(),
         new HtmlWebpackPlugin({
             title: APP_NAME,
             template: 'packages/client-web/index.html',
@@ -74,4 +77,11 @@ export const base = {
         allowedHosts: 'auto',
         hot: true
     },
+    resolve: {
+        alias: {
+            content_home$: path.resolve(dirname, 'assets/home.md')
+        }
+    }
 };
+
+export default config;
